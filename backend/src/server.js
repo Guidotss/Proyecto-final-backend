@@ -1,9 +1,11 @@
-require('dotenv').config();
-const express = require('express'); 
-const morgan = require('morgan'); 
+import dotenv from 'dotenv'; 
+import express from 'express';  
+import morgan  from'morgan'; 
 const app = express(); 
-const routerCarritos = require('./routes/carrito'); 
-const routerProductos = require('./routes/productos'); 
+import routerProductos from './routes/productos.js'
+import routerCarritos from './routes/carrito.js'
+dotenv.config();
+
 
 app.use(morgan('dev')); 
 app.use(express.json()); 
