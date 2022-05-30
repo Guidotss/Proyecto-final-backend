@@ -2,13 +2,13 @@ require('dotenv').config();
 const express = require('express'); 
 const morgan = require('morgan'); 
 const app = express(); 
-const routerCarritos = require('./routers/carrito'); 
-const routerProductos = require('./routers/productos'); 
+const routerCarritos = require('./routes/carrito'); 
+const routerProductos = require('./routes/productos'); 
 
 app.use(morgan('dev')); 
 app.use(express.json()); 
+app.use(express.static('frontend/public/')); 
 app.use(express.urlencoded({extended:true})); 
-app.use(express.static(__dirname + '/public')); 
 app.use('/api/carrito',routerCarritos); 
 app.use('/api/productos',routerProductos); 
 
