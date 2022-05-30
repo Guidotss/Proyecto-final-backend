@@ -2,7 +2,7 @@
 
 ## Objetivos: 
 
-definir una `API` que permita gestionar el backend de un E-commerce. El servidor implementa dos conjuntos de rutas agrupadas en la carpeta **routes**
+Definir una `API` que permita gestionar el backend de un E-commerce. El servidor implementa dos conjuntos de rutas agrupadas en la carpeta **routes**
 cuyos nombres son `productos.js` y `carrito.js` 
 
 ### Acciones de la ruta productos: 
