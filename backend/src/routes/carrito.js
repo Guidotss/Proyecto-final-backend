@@ -4,7 +4,7 @@ import Api from '../apiClass.js'
 const router = Router(); 
 const api = new Api('/dataBase/carritos.json');
 
-router.get('/:id/productos',(req,res) =>{
+router.get('/',(req,res) =>{
     
 });
 
@@ -23,5 +23,6 @@ router.delete('/:id',(req,res) =>{
 router.delete('/:id/productos/:id_prod',(req,res)=>{
     
 }); 
+
 
 export default router;

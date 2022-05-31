@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from "fs"
 
 export default class Api{
     constructor(rutaDB){
@@ -6,11 +6,8 @@ export default class Api{
     }
     async getAll(){
         try {
-
-            const infoTXT = await fs.promises.readFile(this.rutaDB,'utf-8'); 
-
-            return JSON.parse(infoTXT); 
-
+            const todos = await fs.promises.readFile(this.rutaDB,'utf-8'); 
+            return JSON.parse(todos); 
         } catch (error) {
             throw new Error(`Error: ${error}`); 
         }
@@ -18,8 +15,9 @@ export default class Api{
 
     async findById(id){
         try {
-            const todo = await this.getAll();
-            const resultado = todo.find(e =>e.id === id); 
+            const todos = await this.getAll();
+
+            const resultado = todos.find(e=>e.id == id); 
             return resultado;    
             
         } catch (error) {
@@ -29,18 +27,27 @@ export default class Api{
 
     async create(obj){
         try {
-            const todo = this.getAll(); 
-            let id; 
+            const todos = await fs.promises.readFile(this.rutaDB,'utf-8'); 
+            const todosParsed = JSON.parse(todos); 
+            const productsId = todosParsed.map(e => e.id); 
+            let id =1; 
 
-            todo.length == 0 ? id = 1: id = todo[todo.length - 1].id + 1; 
-            todo.push({...obj,id}); 
+            for(let i = 0; i < productsId.length; i++){
+                id < productsId[i] || id == productsId[i] ? id = productsId[i] + 1 : id =0
+            }
 
-            await fs.promises.writeFile(this.rutaDB,JSON.stringify(todo)); 
+            obj.id = id; 
+
+            todosParsed.push(obj); 
+            console.table(todosParsed); 
+
+            const newProductString = JSON.stringify(todosParsed,null,2); 
+            await fs.promises.writeFile(this.rutaDB,newProductString,'utf-8'); 
 
             return id; 
             
         } catch (error) {
-            throw new Error(`Error al guardar: ${error}}`); 
+          throw new Error(`Error al guardar: ${error}`);
         }
     }
 }
