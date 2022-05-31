@@ -1,13 +1,13 @@
 import {Router} from 'express'; 
-import Api from '../apiClass'
+import Api from '../Classes/productos'
 
 const router = Router(); 
-const api = new Api('/dataBase/productos.json');
+const api = new Api('backend/src/dataBase/productos.json');
 
 
 router.get('/',async (req,res) =>{
     const productos = await api.getAll(); 
-    res.json(productos)
+    res.json({Productos:productos})
 }); 
 
 router.get('/:id', async (req,res) =>{

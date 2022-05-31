@@ -1,8 +1,9 @@
 [
   {
-    "nombre": "guido",
-    "precio": "123",
+    "nombre": "pescado",
+    "precio": 111,
     "url": "http://localhost:8080/",
+    "stock": 3,
     "id": 1
   }
 ]

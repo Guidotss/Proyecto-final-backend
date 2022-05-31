@@ -2,14 +2,14 @@ import fs from "fs"
 
 export default class Api{
     constructor(rutaDB){
-        this.rutaDB = __dirname + rutaDB
+        this.rutaDB = rutaDB
     }
     async getAll(){
         try {
             const todos = await fs.promises.readFile(this.rutaDB,'utf-8'); 
             return JSON.parse(todos); 
         } catch (error) {
-            throw new Error(`Error: ${error}`); 
+            throw new Error(`Error al cargar productos: ${error}`); 
         }
     }
 
