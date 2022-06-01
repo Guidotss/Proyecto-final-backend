@@ -26,8 +26,10 @@ export default class{
             id < carritosId[i] || carritosId[i] == id ? id = carritosId[i] + 1 : id = 1; 
         }
         obj.id = id; 
+        obj.productos = []
 
         todosParsed.push(obj); 
+
 
         const nuevoCarritoString = JSON.stringify(todosParsed,null,2); 
         await fs.promises.writeFile(this.rutaDB,nuevoCarritoString,'utf-8'); 
@@ -43,14 +45,37 @@ export default class{
         const productosParsed = JSON.parse(productos); 
         const producto = productosParsed.find(e => e.id == prodId.id); 
 
-        carrito.productos.push(producto); 
         producto.stock --; 
+        carrito.productos.push(producto); 
 
-        
-        
 
         const productosString = JSON.stringify(productosParsed,null,2); 
+        const carritoString = JSON.stringify(carritosParsed,null,2); 
         
         await fs.promises.writeFile('backend/src/dataBase/productos.json',productosString,'utf-8'); 
+        await fs.promises.writeFile(this.rutaDB,carritoString,'utf-8'); 
+    }
+
+    async eliminarCarrito(id){
+        const carritos = await fs.promises.readFile(this.rutaDB,'utf-8'); 
+        const carritosParsed = JSON.parse(carritos); 
+        const carritosId = carritosParsed.map(e =>e.id); 
+
+        for(let i = 0; i < carritosId.length; i++){
+            
+        }
+        
+
+        
+        const carritoString = JSON.stringify(carritosParsed,null,2); 
+        await fs.promises.writeFile(this.rutaDB,carritoString,'utf-8'); 
+    }
+
+    async eliminarProducto(idCarrito,idProducto){
+        try {
+            
+        } catch (error) {
+            throw new Error(`Error al eliminar ${error}`);  
+        }
     }
 }

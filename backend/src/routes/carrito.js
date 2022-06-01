@@ -16,16 +16,18 @@ router.post('/',async (req,res) =>{
     res.json({id:addCarrito})
 });
 
-router.post('/:id/productos',(req,res) =>{
+router.post('/:id/productos',async (req,res) =>{
     const {id} = req.params; // Id del carrito.
     const prodId = req.body; // Ingresar como JSON el id del producto.
-    const addNewproduct = api.AgregarProductos(id,prodId); 
+    const addNewproduct = await api.AgregarProductos(id,prodId); 
 
-    res.send('hola'); 
+    res.json({Mensaje:'Producto agregado al carrito'}); 
 });
 
-router.delete('/:id',(req,res) =>{
-    
+router.delete('/:id',async (req,res) =>{
+    const {id} = req.params; 
+    const eliminarCarrito = await api.eliminarCarrito(id); 
+    res.json({Mensaje:'Carrito eliminado'}); 
 }); 
 
 router.delete('/:id/productos/:id_prod',(req,res)=>{
