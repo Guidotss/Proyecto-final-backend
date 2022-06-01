@@ -11,8 +11,7 @@ export default class{
             const todosParsed = JSON.parse(todos); 
             const carrito = todosParsed.find(e =>e.id == id);   
 
-            return carrito.productos
-
+            return carrito.productos; 
         } catch (error) {
             new Error(`Error al cargar carritos: ${error}`); 
         }
@@ -36,8 +35,16 @@ export default class{
         return id; 
     }
 
-    async AgregarProductos(id,obj){
-        const productos = await this.getAllProducts(); 
-        console.log(productos);
+    async AgregarProductos(id,prodId){
+        const todos = await fs.promises.readFile(this.rutaDB,'utf-8'); 
+        const todosParsed = JSON.parse(todos); 
+        const carrito = todosParsed.find(e => e.id == id); 
+        const productos = await fs.promises.readFile('backend/src/dataBase/productos.json','utf-8'); 
+        const productosParsed = JSON.parse(productos); 
+        const producto = productosParsed.find(e => e.id == prodId.id); 
+        carrito.productos.push(producto); 
+        console.log(carrito);
+
+
     }
 }

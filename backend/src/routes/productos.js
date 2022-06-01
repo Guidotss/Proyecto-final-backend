@@ -1,5 +1,5 @@
 import {Router} from 'express'; 
-import Api from '../Classes/productos'
+import Api from '../Classes/apiClassproductos'
 
 const router = Router(); 
 const api = new Api('backend/src/dataBase/productos.json');

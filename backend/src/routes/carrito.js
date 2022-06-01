@@ -1,5 +1,5 @@
 import {Router} from 'express'; 
-import Api from '../Classes/carrito'
+import Api from '../Classes/apiClasscarrito'
 
 const router = Router(); 
 const api = new Api('backend/src/dataBase/carritos.json');
@@ -17,9 +17,11 @@ router.post('/',async (req,res) =>{
 });
 
 router.post('/:id/productos',(req,res) =>{
-    const {id} = req.params
-    const newProduct  = req.body; 
-    const addNewproduct = api.createNewProduct(id,newProduct); 
+    const {id} = req.params; // Id del carrito.
+    const prodId = req.body; // Ingresar como JSON el id del producto.
+    const addNewproduct = api.AgregarProductos(id,prodId); 
+
+    res.send('hola'); 
 });
 
 router.delete('/:id',(req,res) =>{

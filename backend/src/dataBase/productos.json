@@ -5,5 +5,12 @@
     "url": "http://localhost:8080/",
     "stock": 3,
     "id": 1
+  },
+  {
+    "nombre": "Guido",
+    "precio": 111,
+    "url": "http://localhost:8080/",
+    "stock": 3,
+    "id": 2
   }
 ]
