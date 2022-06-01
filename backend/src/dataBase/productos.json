@@ -10,7 +10,7 @@
     "nombre": "Guido",
     "precio": 111,
     "url": "http://localhost:8080/",
-    "stock": 3,
+    "stock": 2,
     "id": 2
   }
 ]

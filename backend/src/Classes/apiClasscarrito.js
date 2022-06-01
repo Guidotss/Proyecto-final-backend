@@ -36,15 +36,21 @@ export default class{
     }
 
     async AgregarProductos(id,prodId){
-        const todos = await fs.promises.readFile(this.rutaDB,'utf-8'); 
-        const todosParsed = JSON.parse(todos); 
-        const carrito = todosParsed.find(e => e.id == id); 
+        const carritos = await fs.promises.readFile(this.rutaDB,'utf-8'); 
+        const carritosParsed = JSON.parse(carritos); 
+        const carrito = carritosParsed.find(e => e.id == id); 
         const productos = await fs.promises.readFile('backend/src/dataBase/productos.json','utf-8'); 
         const productosParsed = JSON.parse(productos); 
         const producto = productosParsed.find(e => e.id == prodId.id); 
+
         carrito.productos.push(producto); 
-        console.log(carrito);
+        producto.stock --; 
 
+        
+        
 
+        const productosString = JSON.stringify(productosParsed,null,2); 
+        
+        await fs.promises.writeFile('backend/src/dataBase/productos.json',productosString,'utf-8'); 
     }
 }
