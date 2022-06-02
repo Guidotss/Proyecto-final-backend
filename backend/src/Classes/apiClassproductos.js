@@ -67,7 +67,7 @@ export default class Api{
         todos.splice((id-1),1); 
 
         const eliminado = JSON.stringify(todos,null,2); 
-        await fs.promises.writeFile(this.rutaDB,eliminado,'utf-8'); 
+        await fs.promises.writeFile(this.rutaDB,eliminado,'utf-8');  
 
 
         console.log(todos);

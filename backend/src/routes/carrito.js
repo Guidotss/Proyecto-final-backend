@@ -30,8 +30,9 @@ router.delete('/:id',async (req,res) =>{
     res.json({Mensaje:'Carrito eliminado'}); 
 }); 
 
-router.delete('/:id/productos/:id_prod',(req,res)=>{
-    
+router.delete('/:id/productos/:id_prod',async (req,res)=>{
+    const {id,id_prod} =  req.params; 
+    const eliminarProducto = await api.eliminarProducto(id,id_prod); 
 }); 
 
 

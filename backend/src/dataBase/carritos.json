@@ -1,14 +1,18 @@
 [
   {
-    "id": 2,
+    "id": 1,
     "productos": [
       {
-        "nombre": "Guido",
+        "nombre": "BA",
         "precio": 111,
         "url": "http://localhost:8080/",
-        "stock": 16,
-        "id": 2
+        "stock": 7,
+        "id": 4
       }
     ]
+  },
+  {
+    "id": 2,
+    "productos": []
   }
 ]

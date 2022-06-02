@@ -3,14 +3,28 @@
     "nombre": "pescado",
     "precio": 111,
     "url": "http://localhost:8080/",
-    "stock": 18,
+    "stock": 14,
     "id": 1
   },
   {
     "nombre": "Guido",
     "precio": 111,
     "url": "http://localhost:8080/",
-    "stock": 16,
+    "stock": 13,
     "id": 2
+  },
+  {
+    "nombre": "AA",
+    "precio": 111,
+    "url": "http://localhost:8080/",
+    "stock": 12,
+    "id": 3
+  },
+  {
+    "nombre": "BA",
+    "precio": 111,
+    "url": "http://localhost:8080/",
+    "stock": 6,
+    "id": 4
   }
 ]
