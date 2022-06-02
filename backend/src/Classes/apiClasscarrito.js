@@ -134,18 +134,3 @@ export default class{
         }
     }
 }
-
-
-
-
-
-
-/* if(idProd.includes(Number(idProducto))){
-    let index = idProd.indexOf(Number(idProducto)); 
-    carrito.productos.splice(index,1); 
-} 
-carritosParsed.splice((idCarrito-1),1,carrito); 
-
-
-const carritosString = JSON.stringify(carritosParsed,null,2); 
-await fs.promises.writeFile(this.rutaDB,carritosString,'utf-8');  */
