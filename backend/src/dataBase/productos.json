@@ -1,23 +1,23 @@
 [
   {
-    "nombre": "Guido",
-    "precio": 111,
+    "nombre": "Notebook",
+    "precio": 100000,
     "url": "http://localhost:8080/",
     "stock": 13,
+    "id": 1
+  },
+  {
+    "nombre": "TV",
+    "precio": 70000,
+    "url": "http://localhost:8080/",
+    "stock": 12,
     "id": 2
   },
   {
-    "nombre": "AA",
-    "precio": 111,
-    "url": "http://localhost:8080/",
-    "stock": 12,
-    "id": 3
-  },
-  {
-    "nombre": "BA",
-    "precio": 111,
+    "nombre": "Tarjeta grafica",
+    "precio": 200000,
     "url": "http://localhost:8080/",
     "stock": 8,
-    "id": 4
+    "id": 3
   }
 ]
