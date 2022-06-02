@@ -4,6 +4,16 @@ import Api from '../Classes/apiClassproductos'
 const router = Router(); 
 const api = new Api('backend/src/dataBase/productos.json');
 
+const isAdmin = true; 
+
+function adminOrClient(req,res,next){
+    if(!isAdmin){
+        res.json({Mensaje:'El usuario no posee los permiso necesarios'})
+    }else{
+        next(); 
+    }
+}
+
 
 router.get('/',async (req,res) =>{
     const productos = await api.getAll(); 
@@ -16,13 +26,13 @@ router.get('/:id', async (req,res) =>{
     res.json(producto); 
 }); 
 
-router.post('/',async (req,res) =>{
+router.post('/',adminOrClient,async (req,res) =>{
     const obj = req.body; 
     const addProduct = await api.create(obj); 
     res.json({id:addProduct}); 
 }); 
 
-router.put('/:id',async (req,res) =>{
+router.put('/:id',adminOrClient,async (req,res) =>{
     const {id} = req.params; 
     const product = req.body
     await api.updateById(id,product); 
@@ -31,7 +41,7 @@ router.put('/:id',async (req,res) =>{
 }); 
 
 
-router.delete('/:id', async (req,res) =>{
+router.delete('/:id',adminOrClient, async (req,res) =>{
     const {id} = req.params; 
     await api.deleteById(id); 
     res.json({Mensaje:'Producto eliminado con exito'})
