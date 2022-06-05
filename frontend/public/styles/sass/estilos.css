@@ -1,3 +1,8 @@
+@font-face {
+  font-family: SSL;
+  src: url("../fonts/sst-cufonfont/SSTMedium.TTF");
+}
+
 header {
   background-color: #22223b;
   display: -webkit-box;
@@ -9,9 +14,9 @@ header {
 }
 
 header p {
+  font-family: 'Nuosu SIL', serif;
   font-size: 30px;
   color: #f2e9e4;
-  font-family: 'Lora', serif;
   margin-left: 20px;
   margin-top: 15px;
 }
@@ -32,7 +37,41 @@ header nav ul li a {
   color: #f2e9e4;
 }
 
-section #productos {
-  background-color: red;
+a:hover {
+  color: orange !important;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.contenedorProductos {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.contenedorProductos h1 {
+  margin-top: 20px;
+  font-family: SSL;
+  color: #2f353d;
+}
+
+.contenedorProductos #productos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contenedorProductos #productos .card {
+  margin: 20px;
+  width: 13vmax;
+}
+
+.contenedorProductos #productos .card img {
+  width: 200px;
+}
+
+.contenedorProductos #productos .card li {
+  list-style: none;
+  font-size: 20px;
 }
 /*# sourceMappingURL=estilos.css.map */

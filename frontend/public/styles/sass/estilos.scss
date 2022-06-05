@@ -1,12 +1,16 @@
+@font-face{
+    font-family: SSL;
+    src: url('../fonts/sst-cufonfont/SSTMedium.TTF');
+}
 header{
     background-color: #22223b; 
     display: flex;
     justify-content: space-between;
 
     p{
+        font-family: 'Nuosu SIL', serif; 
         font-size: 30px;
         color:#f2e9e4;;
-        font-family: 'Lora', serif;
         margin-left: 20px;
         margin-top: 15px;
     }
@@ -21,16 +25,39 @@ header{
 
                 a{
                     text-decoration: none;
-                    color: #f2e9e4;
+                    color: #f2e9e4; 
                 }
             }
         }
     }
 }
-section{
-    #productos{
-        background-color: red;
-    }
+
+a:hover{
+    color: orange !important;
+    transition: 0.4s;
 }
 
-
+.contenedorProductos{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    h1{
+        margin-top: 20px;
+        font-family: SSL;
+        color:#2f353d
+    }
+    #productos{
+        display: flex;
+        .card{
+            margin: 20px;
+            width: 13vmax;
+            img{
+                width: 200px;
+            }
+            li{
+                list-style: none;
+                font-size: 20px;
+            }
+        }
+    }
+}
