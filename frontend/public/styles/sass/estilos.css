@@ -31,4 +31,8 @@ header nav ul li a {
   text-decoration: none;
   color: #f2e9e4;
 }
+
+section #productos {
+  background-color: red;
+}
 /*# sourceMappingURL=estilos.css.map */
