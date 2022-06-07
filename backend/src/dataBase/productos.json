@@ -19,5 +19,19 @@
     "url": "https://arsonyb2c.vtexassets.com/arquivos/ids/359769-1600-auto?v=637889109682770000&width=1600&height=auto&aspect=true",
     "stock": 8,
     "id": 3
+  },
+  {
+    "nombre": "Camara de fotos",
+    "precio": 50000,
+    "url": "https://arsonyb2c.vtexassets.com/arquivos/ids/318562-1600-auto?v=637240001624570000&width=1600&height=auto&aspect=true",
+    "stock": 7,
+    "id": 4
+  },
+  {
+    "nombre":"Barra de audio",
+    "precio":65000,
+    "url":"https://arsonyb2c.vtexassets.com/arquivos/ids/284477-1600-auto?v=637070650118170000&width=1600&height=auto&aspect=true",
+    "stock":12,
+    "id":5
   }
 ]

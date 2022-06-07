@@ -50,7 +50,8 @@ a:hover {
 }
 
 .contenedorProductos h1 {
-  margin-top: 20px;
+  margin-top: 8%;
+  margin-bottom: 50px;
   font-family: SSL;
   color: #2f353d;
 }
@@ -64,13 +65,25 @@ a:hover {
 .contenedorProductos #productos .card {
   margin: 20px;
   width: 13vmax;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contenedorProductos #productos .card li {
+  list-style: none;
+  font-size: 20px;
 }
 
 .contenedorProductos #productos .card img {
   width: 200px;
 }
 
-.contenedorProductos #productos .card li {
+.contenedorProductos #productos .card ul {
+  margin-right: 18%;
+}
+
+.contenedorProductos #productos .card ul li {
   list-style: none;
   font-size: 20px;
 }
