@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "id": 1,
+    "productos": [
+      {
+        "nombre": "TV",
+        "precio": 70000,
+        "url": "https://www.sony.com.ar/image/d4f672c8c1b08401c3fb67cce747b7db?fmt=pjpeg&bgcolor=FFFFFF&bgc=FFFFFF&wid=2515&hei=1320",
+        "stock": 11,
+        "id": 2
+      },
+      {
+        "nombre": "Play Station 5",
+        "precio": 100000,
+        "url": "https://arsonyb2c.vtexassets.com/arquivos/ids/348009/PS5_Dig_DS.jpg?v=637363629028470000",
+        "stock": 12,
+        "id": 1
+      }
+    ]
+  }
+]

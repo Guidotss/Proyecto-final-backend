@@ -4,7 +4,7 @@ import Api from '../Classes/apiClassproductos';
 const router = Router(); 
 const api = new Api('backend/src/dataBase/productos.json');
 
-const isAdmin = false; 
+const isAdmin = true; 
 
 function adminOrClient(req,res,next){
     if(!isAdmin){

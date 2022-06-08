@@ -64,7 +64,7 @@ export default class Api{
         try {
             const todos = await this.getAll(); 
             todos.splice((id-1),1,obj); 
-
+            obj.id = parseInt(id); 
             const actualizado = JSON.stringify(todos,null,2);
             await fs.promises.writeFile(this.rutaDB,actualizado,'utf-8'); 
 
