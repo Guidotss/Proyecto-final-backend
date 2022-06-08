@@ -30,6 +30,7 @@ const createProductItem = productos => productos.map(producto =>{
         `
     )
 }).join('')
+
 function renderProductos(productos){
     const itemString = createProductItem(productos); 
     listaProductos.innerHTML = itemString

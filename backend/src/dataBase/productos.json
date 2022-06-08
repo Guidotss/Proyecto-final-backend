@@ -28,10 +28,10 @@
     "id": 4
   },
   {
-    "nombre":"Barra de audio",
-    "precio":65000,
-    "url":"https://arsonyb2c.vtexassets.com/arquivos/ids/284477-1600-auto?v=637070650118170000&width=1600&height=auto&aspect=true",
-    "stock":12,
-    "id":5
+    "nombre": "Barra de audio",
+    "precio": 65000,
+    "url": "https://arsonyb2c.vtexassets.com/arquivos/ids/284477-1600-auto?v=637070650118170000&width=1600&height=auto&aspect=true",
+    "stock": 12,
+    "id": 5
   }
 ]

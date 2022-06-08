@@ -26,22 +26,27 @@ export default class Api{
 
     async create(obj){
         try {
-            const todos = await this.getAll(); 
-            const productsId = todos.map(e => e.id); 
-            let id =1; 
 
-            for(let i = 0; i < productsId.length; i++){
-                id < productsId[i] || id == productsId[i] ? id = productsId[i] + 1 : id =0
+            if(JSON.stringify(obj) != '{}'){
+                const todos = await this.getAll(); 
+                const productsId = todos.map(e => e.id); 
+                let id =1; 
+        
+                for(let i = 0; i < productsId.length; i++){
+                    id < productsId[i] || id == productsId[i] ? id = productsId[i] + 1 : id =0
+                }
+    
+                obj.id = id; 
+                    
+                todos.push(obj); 
+        
+                const newProductString = JSON.stringify(todos,null,2); 
+                await fs.promises.writeFile(this.rutaDB,newProductString,'utf-8'); 
+        
+                return id; 
+            }else{
+                return 'Error al guardar el producto'; 
             }
-
-            obj.id = id; 
-
-            todos.push(obj); 
-
-            const newProductString = JSON.stringify(todos,null,2); 
-            await fs.promises.writeFile(this.rutaDB,newProductString,'utf-8'); 
-
-            return id; 
             
         } catch (error) {
           throw new Error(`Error al guardar: ${error}`);

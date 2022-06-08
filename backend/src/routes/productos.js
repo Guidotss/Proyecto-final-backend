@@ -27,9 +27,12 @@ router.get('/:id', async (req,res) =>{
 }); 
 
 router.post('/',adminOrClient,async (req,res) =>{
+
     const obj = req.body; 
     const addProduct = await api.create(obj); 
-    res.json({id:addProduct}); 
+
+    return res.json({id:addProduct});
+    
 }); 
 
 router.put('/:id',adminOrClient,async (req,res) =>{
