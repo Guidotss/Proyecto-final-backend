@@ -1,8 +1,8 @@
-import fs from "fs"
+import fs from 'fs';
 
 export default class Api{
     constructor(rutaDB){
-        this.rutaDB = rutaDB
+        this.rutaDB = rutaDB;
     }
     async getAll(){
         try {
@@ -15,10 +15,17 @@ export default class Api{
 
     async findById(id){
         try {
-            const todos = await this.getAll();
-            const resultado = todos.find(e=>e.id == id); 
-            return resultado;    
+            const productos = await this.getAll();
+            const productosId = productos.map(e=>e.id); 
             
+            if(productosId.includes(Number(id))){
+                let index = productosId.indexOf(Number(id)); 
+                return productos[index]; 
+            }else{
+                return 'El id ingresado no existe'; 
+            }
+
+
         } catch (error) {
             throw new Error(`Error: ${error}`); 
         }
@@ -33,7 +40,7 @@ export default class Api{
                 let id =1; 
         
                 for(let i = 0; i < productsId.length; i++){
-                    id < productsId[i] || id == productsId[i] ? id = productsId[i] + 1 : id =0
+                    id < productsId[i] || id == productsId[i] ? id = productsId[i] + 1 : id = 0;
                 }
     
                 obj.id = id; 
@@ -49,7 +56,7 @@ export default class Api{
             }
             
         } catch (error) {
-          throw new Error(`Error al guardar: ${error}`);
+            throw new Error(`Error al guardar: ${error}`);
         }
     }
 

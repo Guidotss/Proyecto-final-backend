@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'fs';
 
 export default class{
     constructor(rutaDB){
@@ -30,7 +30,7 @@ export default class{
                 id < carritosId[i] || carritosId[i] == id ? id = carritosId[i] + 1 : id = 1; 
             }
             obj.id = id; 
-            obj.productos = []
+            obj.productos = [];
     
             todosParsed.push(obj); 
     

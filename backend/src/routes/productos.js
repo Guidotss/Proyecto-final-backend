@@ -1,5 +1,5 @@
 import {Router} from 'express'; 
-import Api from '../Classes/apiClassproductos'
+import Api from '../Classes/apiClassproductos';
 
 const router = Router(); 
 const api = new Api('backend/src/dataBase/productos.json');
@@ -8,22 +8,21 @@ const isAdmin = true;
 
 function adminOrClient(req,res,next){
     if(!isAdmin){
-        res.json({Mensaje:'El usuario no posee los permiso necesarios'})
+        res.json({Mensaje:'El usuario no posee los permiso necesarios'});
     }else{
         next(); 
     }
 }
 
-
 router.get('/',async (req,res) =>{
     const productos = await api.getAll(); 
-    res.json({Productos:productos})
+    res.json({Productos:productos});
 }); 
 
 router.get('/:id', async (req,res) =>{
     const {id} = req.params; 
     const producto = await api.findById(id);
-    res.json(producto); 
+    return res.json({producto}); 
 }); 
 
 router.post('/',adminOrClient,async (req,res) =>{
@@ -37,7 +36,7 @@ router.post('/',adminOrClient,async (req,res) =>{
 
 router.put('/:id',adminOrClient,async (req,res) =>{
     const {id} = req.params; 
-    const product = req.body
+    const product = req.body;
     await api.updateById(id,product); 
     
     res.json({Mensaje:'Producto actualizado con exito'});
@@ -47,7 +46,7 @@ router.put('/:id',adminOrClient,async (req,res) =>{
 router.delete('/:id',adminOrClient, async (req,res) =>{
     const {id} = req.params; 
     await api.deleteById(id); 
-    res.json({Mensaje:'Producto eliminado con exito'})
+    res.json({Mensaje:'Producto eliminado con exito'});
 }); 
 
 

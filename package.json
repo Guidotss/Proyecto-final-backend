@@ -11,18 +11,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "socket.io": "^4.5.1"
+    "dotenv": "16.0.1",
+    "express": "4.18.1",
+    "socket.io": "4.5.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.10",
-    "@babel/core": "^7.18.2",
-    "@babel/node": "^7.17.10",
-    "@babel/preset-env": "^7.18.2",
-    "autoprefixer": "^10.4.7",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.16"
+    "@babel/cli": "7.17.10",
+    "@babel/core": "7.18.2",
+    "@babel/node": "7.17.10",
+    "@babel/preset-env": "7.18.2",
+    "autoprefixer": "10.4.7",
+    "eslint": "8.17.0",
+    "morgan": "1.10.0",
+    "nodemon": "2.0.16"
   },
   "repository": {
     "type": "git",
