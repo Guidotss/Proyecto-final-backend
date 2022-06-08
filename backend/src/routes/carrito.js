@@ -14,7 +14,7 @@ router.get('/:id/productos', async (req,res) =>{
 router.post('/',async (req,res) =>{
     const carrito = req.body;
     const addCarrito = await api.crearCarrito(carrito); 
-    res.json({id:addCarrito})
+    res.json({id:addCarrito}); 
 });
 
 router.post('/:id/productos',async (req,res) =>{
@@ -34,9 +34,9 @@ router.delete('/:id',async (req,res) =>{
     const eliminarCarrito = await api.eliminarCarrito(id); 
     
     if(eliminarCarrito){
-       return res.json({Mensaje:'Carrito eliminado con exito'}); 
+        return res.json({Mensaje:'Carrito eliminado con exito'}); 
     }else{
-       return res.json({Mensaje:'El carrito ingresado no existe'}); 
+        return res.json({Mensaje:'El carrito ingresado no existe'}); 
     }
 }); 
 

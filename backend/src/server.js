@@ -15,7 +15,9 @@ app.use(express.urlencoded({extended:true}));
 app.use('/api/carrito',routerCarritos); 
 app.use('/api/productos',routerProductos); 
 
-const PORT = process.env.PORT; 
+
+// eslint-disable-next-line no-undef
+const PORT = process.env.PORT || 3001; 
 
 const server = app.listen(PORT,() =>{
     console.log(`Server on port ${server.address().port}`);

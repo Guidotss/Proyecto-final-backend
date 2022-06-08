@@ -4,11 +4,16 @@ import Api from '../Classes/apiClassproductos';
 const router = Router(); 
 const api = new Api('backend/src/dataBase/productos.json');
 
-const isAdmin = true; 
+const isAdmin = false; 
 
 function adminOrClient(req,res,next){
     if(!isAdmin){
-        res.json({Mensaje:'El usuario no posee los permiso necesarios'});
+        res.json(
+            {
+                error: '-1',
+                descripcion: `Ruta ${req.baseUrl} metodo ${req.method} no autorizada`
+            }
+        );
     }else{
         next(); 
     }
@@ -23,13 +28,14 @@ router.get('/:id', async (req,res) =>{
     const {id} = req.params; 
     const producto = await api.findById(id);
     return res.json({producto}); 
+    
 }); 
 
 router.post('/',adminOrClient,async (req,res) =>{
 
     const obj = req.body; 
     const addProduct = await api.create(obj); 
-
+    
     return res.json({id:addProduct});
     
 }); 
